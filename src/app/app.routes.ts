@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
 
 export const routes: Routes = [
     {
@@ -11,5 +10,10 @@ export const routes: Routes = [
         path: 'login',
         title: 'Login',
         loadComponent: () => import('./pages/auth/login/login.component')
+    },
+    {
+        path: 'components/layout',
+        title: 'Layout',
+        loadComponent: () => import('./components/layout/layout.component')
     }
 ];

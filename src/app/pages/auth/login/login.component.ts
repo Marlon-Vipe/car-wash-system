@@ -24,7 +24,7 @@ export default class LoginComponent {
   }
 
   login(){
-    console.log("tamo en vivo");
+    console.log("tamo en vivo!!");
     this.resetForm()
   }
 

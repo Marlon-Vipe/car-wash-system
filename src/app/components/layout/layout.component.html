@@ -1,3 +1,7 @@
-<app-dashboard/>
-<app-sidebar/>
-<app-footer/>
+<div class="flex">
+    <app-sidebar class="fixed h-screen"/>
+    <main class="ml-64 w-full"> <!-- ml-64 debe coincidir con el ancho de tu sidebar -->
+    <app-dashboard/>
+    <app-footer/>
+    </main>
+</div>

@@ -3,11 +3,16 @@ import { RouterModule } from "@angular/router";
 import { Routes } from "@angular/router";
 import { DashboardComponent } from "../../components/dashboard/dashboard.component";
 import LayoutComponent from "../../components/layout/layout.component";
+import { ConfigurationComponent } from "./configuration/configuration.component";
 
 const routes: Routes = [
     {
-        path: 'dashboard',
+        path: 'layout',
         component: LayoutComponent
+    },
+    {
+        path: 'configuration',
+        component: ConfigurationComponent
     },
 ];
 

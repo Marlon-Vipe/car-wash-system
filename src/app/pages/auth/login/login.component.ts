@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export default class LoginComponent {
   
+  private alertService = inject(AlertService)
   private loginForm = inject(FormBuilder)
   private router = inject(Router);
 
@@ -32,6 +34,7 @@ export default class LoginComponent {
   login() {
     if (this.form.valid) {
       const { email, password } = this.form.value;
+      this.alertService.succesAlert();
       
       // Aquí puedes agregar tu lógica de validación real
       if (email === 'test@test.com' && password === '123456') {

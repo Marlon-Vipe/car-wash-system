@@ -20,6 +20,6 @@ export const routes: Routes = [
     {
         path: 'general',
         component: LayoutComponent,
-        loadChildren: ()=> import ('./pages/auth/general/general.routing.module')
+        loadChildren: ()=> import ('./pages/general/general.routing.module')
     }
 ];

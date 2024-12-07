@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import LayoutComponent from './components/layout/layout.component';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,10 @@ export const routes: Routes = [
         path: 'components/layout',
         title: 'Layout',
         loadComponent: () => import('./components/layout/layout.component')
+    },
+    {
+        path: 'general',
+        component: LayoutComponent,
+        loadChildren: ()=> import ('./pages/auth/general/general.routing.module')
     }
 ];

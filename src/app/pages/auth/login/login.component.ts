@@ -34,18 +34,22 @@ export default class LoginComponent {
   login() {
     if (this.form.valid) {
       const { email, password } = this.form.value;
-      this.alertService.succesAlert();
       
-      // Aquí puedes agregar tu lógica de validación real
+      // Validación de credenciales
       if (email === 'test@test.com' && password === '123456') {
         // Guardar datos en localStorage
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userEmail', email);
         
-        // Navegar al layout
-        this.router.navigate(['/components/layout']); // Ajusta la ruta según tu configuración
+        // Mostrar alerta de éxito y navegar
+        this.alertService.succesAlert().then((res) => {
+          if (res.isConfirmed) {
+            this.router.navigate(['/components/layout']);
+          }
+        });
       } else {
-        alert('Credenciales incorrectas');
+        // Mostrar alerta de error y resetear el formulario
+        this.alertService.errorAlert("Error", "Credenciales inválidas");
         this.resetForm();
       }
     }

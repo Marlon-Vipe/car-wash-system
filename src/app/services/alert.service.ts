@@ -7,9 +7,18 @@ import Swal from 'sweetalert2'
 export class AlertService{
     succesAlert(){
         return Swal.fire({
-            title: "Auto Close Alert!",
-            text: 'Proceso completado correctamente',
-            timer: 2000
+            title: "Bienvenido a Vipe Car Wash System",
+            text: "Inicio de sesión exitoso",
+            timer: 3000,
+            icon: "success"
+        })
+    }
+    errorAlert(title: string, text: string){
+        return Swal.fire({
+            title: title,
+            text: text,
+            timer: 2000,
+            icon: "error"
         })
     }
 }
